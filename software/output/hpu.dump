@@ -1,0 +1,494 @@
+
+output/hpu.mo:     file format elf32-littleriscv
+output/hpu.mo
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000200
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x00000758 memsz 0x00000758 flags r-x
+    LOAD off    0x00002000 vaddr 0x00100000 paddr 0x00100000 align 2**12
+         filesz 0x00000024 memsz 0x00000024 flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text.init    00000088  00000000  00000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .text         00000558  00000200  00000200  00001200  2**9
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .sbss         00000004  00100000  00100000  00002000  2**2
+                  ALLOC
+  3 .data         00000020  00100004  00100004  00002004  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .debug_info   000000d8  00000000  00000000  00002024  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 00000071  00000000  00000000  000020fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_aranges 00000020  00000000  00000000  0000216d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000077  00000000  00000000  0000218d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000000d4  00000000  00000000  00002204  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .comment      00000011  00000000  00000000  000022d8  2**0
+                  CONTENTS, READONLY
+ 10 .debug_frame  0000002c  00000000  00000000  000022ec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000 l    d  .text.init	00000000 .text.init
+00000200 l    d  .text	00000000 .text
+00100000 l    d  .sbss	00000000 .sbss
+00100004 l    d  .data	00000000 .data
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    df *ABS*	00000000 _init.o
+02000000 l       *ABS*	00000000 CLINT
+0c000000 l       *ABS*	00000000 PLIC
+00000000 l       *ABS*	00000000 ITCM
+00100000 l       *ABS*	00000000 DTCM
+00102000 l       *ABS*	00000000 STACK_BASE_ADDR
+20002000 l       *ABS*	00000000 PS_CTRL_IF
+20000000 l       *ABS*	00000000 DPU_REGMGR
+20000100 l       *ABS*	00000000 DPU_CONV
+20000200 l       *ABS*	00000000 DPU_DWCALC
+20000300 l       *ABS*	00000000 DPU_DTRANS
+20000400 l       *ABS*	00000000 DPU_FTRANS
+20000500 l       *ABS*	00000000 DPU_LDMR
+20000600 l       *ABS*	00000000 DPU_SVMR
+20000700 l       *ABS*	00000000 DPU_DLCTRL
+20000800 l       *ABS*	00000000 DPU_UPLCTRL
+00000300 l       *ABS*	00000000 CSR_MSTATUS
+00000304 l       *ABS*	00000000 CSR_MIE
+00000000 l       .text.init	00000000 _intr_vector_entry
+00000210 l       .text	00000000 me_intr_entry
+00000238 l       .text	00000000 c1_intr_entry
+0000004c l       .text.init	00000000 init_intr
+00000000 l    df *ABS*	00000000 main.c
+00000000 l    df *ABS*	00000000 hpu_api.o
+02000000 l       *ABS*	00000000 CLINT
+0c000000 l       *ABS*	00000000 PLIC
+00000000 l       *ABS*	00000000 ITCM
+00100000 l       *ABS*	00000000 DTCM
+00102000 l       *ABS*	00000000 STACK_BASE_ADDR
+20002000 l       *ABS*	00000000 PS_CTRL_IF
+20000000 l       *ABS*	00000000 DPU_REGMGR
+20000100 l       *ABS*	00000000 DPU_CONV
+20000200 l       *ABS*	00000000 DPU_DWCALC
+20000300 l       *ABS*	00000000 DPU_DTRANS
+20000400 l       *ABS*	00000000 DPU_FTRANS
+20000500 l       *ABS*	00000000 DPU_LDMR
+20000600 l       *ABS*	00000000 DPU_SVMR
+20000700 l       *ABS*	00000000 DPU_DLCTRL
+20000800 l       *ABS*	00000000 DPU_UPLCTRL
+00000008 l       *ABS*	00000000 LEN_DPU_CONV
+00000008 l       *ABS*	00000000 LEN_DPU_DWCALC
+00000005 l       *ABS*	00000000 LEN_DPU_DTRANS
+00000004 l       *ABS*	00000000 LEN_DPU_FTRANS
+00000005 l       *ABS*	00000000 LEN_DPU_LDMR
+00000004 l       *ABS*	00000000 LEN_DPU_SVMR
+00000003 l       *ABS*	00000000 LEN_DPU_DLCTRL
+00000001 l       *ABS*	00000000 LEN_DPU_UPLCTRL
+00000001 l       *ABS*	00000000 INTR_H
+00000000 l       *ABS*	00000000 INTR_L
+00000438 l       .text	00000000 set_param
+000004bc l       .text	00000000 conv_check_exit
+00000524 l       .text	00000000 dwcalc_check_exit
+00000588 l       .text	00000000 dtrans_check_exit
+000005ec l       .text	00000000 ftrans_check_exit
+00000650 l       .text	00000000 ldmr_check_exit
+000006b4 l       .text	00000000 svmr_check_exit
+00000654 g       .text	00000000 svmr_set
+000005f0 g       .text	00000000 ldmr_set
+00000550 g       .text	00000000 dtrans_start
+000004fc g       .text	00000000 dwcalc_check
+00000458 g       .text	00000000 conv_set
+0000058c g       .text	00000000 ftrans_set
+00000690 g       .text	00000000 svmr_check
+000006b8 g       .text	00000000 dlctrl_set
+000005b4 g       .text	00000000 ftrans_start
+000004c0 g       .text	00000000 dwcalc_set
+0000062c g       .text	00000000 ldmr_check
+00100004 g     O .data	00000020 conv_param
+00000480 g       .text	00000000 conv_start
+00000200 g       .text	00000000 _start
+000004e8 g       .text	00000000 dwcalc_start
+0000067c g       .text	00000000 svmr_start
+00000748 g       .text	00000000 fshflg_ps
+000005c8 g       .text	00000000 ftrans_check
+00000400 g     F .text	00000038 main
+00000734 g       .text	00000000 uplctrl_start
+00000494 g       .text	00000000 conv_check
+00100000 g     O .sbss	00000004 intr_conv_act
+00000528 g       .text	00000000 dtrans_set
+00000564 g       .text	00000000 dtrans_check
+00000618 g       .text	00000000 ldmr_start
+0000070c g       .text	00000000 uplctrl_set
+
+
+
+Disassembly of section .text.init:
+
+00000000 <_intr_vector_entry>:
+   0:	30200073          	mret
+   4:	30200073          	mret
+   8:	30200073          	mret
+   c:	30200073          	mret
+  10:	30200073          	mret
+  14:	30200073          	mret
+  18:	30200073          	mret
+  1c:	30200073          	mret
+  20:	30200073          	mret
+  24:	30200073          	mret
+  28:	30200073          	mret
+  2c:	1e40006f          	j	210 <me_intr_entry>
+  30:	2080006f          	j	238 <c1_intr_entry>
+  34:	30200073          	mret
+  38:	30200073          	mret
+  3c:	30200073          	mret
+  40:	30200073          	mret
+  44:	30200073          	mret
+  48:	30200073          	mret
+
+0000004c <init_intr>:
+  4c:	ff810113          	addi	sp,sp,-8
+  50:	00112223          	sw	ra,4(sp)
+  54:	001022b7          	lui	t0,0x102
+  58:	34029073          	csrw	mscratch,t0
+  5c:	000022b7          	lui	t0,0x2
+  60:	80028293          	addi	t0,t0,-2048 # 1800 <fshflg_ps+0x10b8>
+  64:	30429073          	csrw	mie,t0
+  68:	00100293          	li	t0,1
+  6c:	30529073          	csrw	mtvec,t0
+  70:	000022b7          	lui	t0,0x2
+  74:	8ff28293          	addi	t0,t0,-1793 # 18ff <fshflg_ps+0x11b7>
+  78:	30029073          	csrw	mstatus,t0
+  7c:	00412083          	lw	ra,4(sp)
+  80:	00810113          	addi	sp,sp,8
+  84:	00008067          	ret
+
+Disassembly of section .text:
+
+00000200 <_start>:
+ 200:	00102137          	lui	sp,0x102
+ 204:	00000097          	auipc	ra,0x0
+ 208:	e48080e7          	jalr	-440(ra) # 4c <init_intr>
+ 20c:	1f4000ef          	jal	ra,400 <main>
+
+00000210 <me_intr_entry>:
+ 210:	34051573          	csrrw	a0,mscratch,a0
+ 214:	00552223          	sw	t0,4(a0)
+ 218:	00652423          	sw	t1,8(a0)
+ 21c:	00200293          	li	t0,2
+ 220:	20000337          	lui	t1,0x20000
+ 224:	00532023          	sw	t0,0(t1) # 20000000 <DPU_REGMGR>
+ 228:	00452283          	lw	t0,4(a0)
+ 22c:	00852303          	lw	t1,8(a0)
+ 230:	34051573          	csrrw	a0,mscratch,a0
+ 234:	30200073          	mret
+
+00000238 <c1_intr_entry>:
+ 238:	34051573          	csrrw	a0,mscratch,a0
+ 23c:	00552223          	sw	t0,4(a0)
+ 240:	00652423          	sw	t1,8(a0)
+ 244:	00400293          	li	t0,4
+ 248:	20000337          	lui	t1,0x20000
+ 24c:	00532023          	sw	t0,0(t1) # 20000000 <DPU_REGMGR>
+ 250:	00452283          	lw	t0,4(a0)
+ 254:	00852303          	lw	t1,8(a0)
+ 258:	34051573          	csrrw	a0,mscratch,a0
+ 25c:	30200073          	mret
+	...
+
+00000400 <main>:
+c_conv_param conv_param = {1, 3, 5, 7, 9, 11, 13, 15};
+
+int intr_conv_act = 0;
+
+void main()
+{
+ 400:	ff010113          	addi	sp,sp,-16 # 101ff0 <conv_param+0x1fec>
+ 404:	00112623          	sw	ra,12(sp)
+ 408:	00812423          	sw	s0,8(sp)
+ 40c:	01010413          	addi	s0,sp,16
+    conv_set(&conv_param);
+ 410:	001007b7          	lui	a5,0x100
+ 414:	00478513          	addi	a0,a5,4 # 100004 <conv_param>
+ 418:	040000ef          	jal	ra,458 <conv_set>
+
+    while (1)
+    {
+        // wait for start signal
+        while(!intr_conv_act);
+ 41c:	00000013          	nop
+ 420:	001007b7          	lui	a5,0x100
+ 424:	0007a783          	lw	a5,0(a5) # 100000 <DTCM>
+ 428:	fe078ce3          	beqz	a5,420 <main+0x20>
+        intr_conv_act= 0;
+ 42c:	001007b7          	lui	a5,0x100
+ 430:	0007a023          	sw	zero,0(a5) # 100000 <DTCM>
+        while(!intr_conv_act);
+ 434:	fe9ff06f          	j	41c <main+0x1c>
+
+00000438 <set_param>:
+ 438:	00060293          	mv	t0,a2
+ 43c:	00052303          	lw	t1,0(a0)
+ 440:	00450513          	addi	a0,a0,4
+ 444:	0065a023          	sw	t1,0(a1)
+ 448:	00458593          	addi	a1,a1,4
+ 44c:	fff28293          	addi	t0,t0,-1
+ 450:	fe0296e3          	bnez	t0,43c <set_param+0x4>
+ 454:	00008067          	ret
+
+00000458 <conv_set>:
+ 458:	ff010113          	addi	sp,sp,-16
+ 45c:	00112623          	sw	ra,12(sp)
+ 460:	200005b7          	lui	a1,0x20000
+ 464:	10058593          	addi	a1,a1,256 # 20000100 <DPU_CONV>
+ 468:	00458593          	addi	a1,a1,4
+ 46c:	00800613          	li	a2,8
+ 470:	fc9ff0ef          	jal	ra,438 <set_param>
+ 474:	00c12083          	lw	ra,12(sp)
+ 478:	01010113          	addi	sp,sp,16
+ 47c:	00008067          	ret
+
+00000480 <conv_start>:
+ 480:	200002b7          	lui	t0,0x20000
+ 484:	10028293          	addi	t0,t0,256 # 20000100 <DPU_CONV>
+ 488:	00300313          	li	t1,3
+ 48c:	0062a023          	sw	t1,0(t0)
+ 490:	00008067          	ret
+
+00000494 <conv_check>:
+ 494:	20000337          	lui	t1,0x20000
+ 498:	00432283          	lw	t0,4(t1) # 20000004 <DPU_REGMGR+0x4>
+ 49c:	0012f293          	andi	t0,t0,1
+ 4a0:	00000513          	li	a0,0
+ 4a4:	00028c63          	beqz	t0,4bc <conv_check_exit>
+ 4a8:	20000337          	lui	t1,0x20000
+ 4ac:	10030313          	addi	t1,t1,256 # 20000100 <DPU_CONV>
+ 4b0:	00200293          	li	t0,2
+ 4b4:	00532023          	sw	t0,0(t1)
+ 4b8:	00100513          	li	a0,1
+
+000004bc <conv_check_exit>:
+ 4bc:	00008067          	ret
+
+000004c0 <dwcalc_set>:
+ 4c0:	ff010113          	addi	sp,sp,-16
+ 4c4:	00112623          	sw	ra,12(sp)
+ 4c8:	200005b7          	lui	a1,0x20000
+ 4cc:	20058593          	addi	a1,a1,512 # 20000200 <DPU_DWCALC>
+ 4d0:	00458593          	addi	a1,a1,4
+ 4d4:	00800613          	li	a2,8
+ 4d8:	f61ff0ef          	jal	ra,438 <set_param>
+ 4dc:	00c12083          	lw	ra,12(sp)
+ 4e0:	01010113          	addi	sp,sp,16
+ 4e4:	00008067          	ret
+
+000004e8 <dwcalc_start>:
+ 4e8:	200002b7          	lui	t0,0x20000
+ 4ec:	20028293          	addi	t0,t0,512 # 20000200 <DPU_DWCALC>
+ 4f0:	00300313          	li	t1,3
+ 4f4:	0062a023          	sw	t1,0(t0)
+ 4f8:	00008067          	ret
+
+000004fc <dwcalc_check>:
+ 4fc:	20000337          	lui	t1,0x20000
+ 500:	00432283          	lw	t0,4(t1) # 20000004 <DPU_REGMGR+0x4>
+ 504:	0022f293          	andi	t0,t0,2
+ 508:	00000513          	li	a0,0
+ 50c:	00028c63          	beqz	t0,524 <dwcalc_check_exit>
+ 510:	20000337          	lui	t1,0x20000
+ 514:	20030313          	addi	t1,t1,512 # 20000200 <DPU_DWCALC>
+ 518:	00200293          	li	t0,2
+ 51c:	00532023          	sw	t0,0(t1)
+ 520:	00100513          	li	a0,1
+
+00000524 <dwcalc_check_exit>:
+ 524:	00008067          	ret
+
+00000528 <dtrans_set>:
+ 528:	ff010113          	addi	sp,sp,-16
+ 52c:	00112623          	sw	ra,12(sp)
+ 530:	200005b7          	lui	a1,0x20000
+ 534:	30058593          	addi	a1,a1,768 # 20000300 <DPU_DTRANS>
+ 538:	00458593          	addi	a1,a1,4
+ 53c:	00500613          	li	a2,5
+ 540:	ef9ff0ef          	jal	ra,438 <set_param>
+ 544:	00c12083          	lw	ra,12(sp)
+ 548:	01010113          	addi	sp,sp,16
+ 54c:	00008067          	ret
+
+00000550 <dtrans_start>:
+ 550:	200002b7          	lui	t0,0x20000
+ 554:	30028293          	addi	t0,t0,768 # 20000300 <DPU_DTRANS>
+ 558:	00300313          	li	t1,3
+ 55c:	0062a023          	sw	t1,0(t0)
+ 560:	00008067          	ret
+
+00000564 <dtrans_check>:
+ 564:	20000337          	lui	t1,0x20000
+ 568:	00432283          	lw	t0,4(t1) # 20000004 <DPU_REGMGR+0x4>
+ 56c:	0042f293          	andi	t0,t0,4
+ 570:	0022d513          	srli	a0,t0,0x2
+ 574:	00028a63          	beqz	t0,588 <dtrans_check_exit>
+ 578:	20000337          	lui	t1,0x20000
+ 57c:	30030313          	addi	t1,t1,768 # 20000300 <DPU_DTRANS>
+ 580:	00200293          	li	t0,2
+ 584:	00532023          	sw	t0,0(t1)
+
+00000588 <dtrans_check_exit>:
+ 588:	00008067          	ret
+
+0000058c <ftrans_set>:
+ 58c:	ff010113          	addi	sp,sp,-16
+ 590:	00112623          	sw	ra,12(sp)
+ 594:	200005b7          	lui	a1,0x20000
+ 598:	40058593          	addi	a1,a1,1024 # 20000400 <DPU_FTRANS>
+ 59c:	00458593          	addi	a1,a1,4
+ 5a0:	00400613          	li	a2,4
+ 5a4:	e95ff0ef          	jal	ra,438 <set_param>
+ 5a8:	00c12083          	lw	ra,12(sp)
+ 5ac:	01010113          	addi	sp,sp,16
+ 5b0:	00008067          	ret
+
+000005b4 <ftrans_start>:
+ 5b4:	200002b7          	lui	t0,0x20000
+ 5b8:	40028293          	addi	t0,t0,1024 # 20000400 <DPU_FTRANS>
+ 5bc:	00300313          	li	t1,3
+ 5c0:	0062a023          	sw	t1,0(t0)
+ 5c4:	00008067          	ret
+
+000005c8 <ftrans_check>:
+ 5c8:	20000337          	lui	t1,0x20000
+ 5cc:	00432283          	lw	t0,4(t1) # 20000004 <DPU_REGMGR+0x4>
+ 5d0:	0082f293          	andi	t0,t0,8
+ 5d4:	0032d513          	srli	a0,t0,0x3
+ 5d8:	00028a63          	beqz	t0,5ec <ftrans_check_exit>
+ 5dc:	20000337          	lui	t1,0x20000
+ 5e0:	40030313          	addi	t1,t1,1024 # 20000400 <DPU_FTRANS>
+ 5e4:	00200293          	li	t0,2
+ 5e8:	00532023          	sw	t0,0(t1)
+
+000005ec <ftrans_check_exit>:
+ 5ec:	00008067          	ret
+
+000005f0 <ldmr_set>:
+ 5f0:	ff010113          	addi	sp,sp,-16
+ 5f4:	00112623          	sw	ra,12(sp)
+ 5f8:	200005b7          	lui	a1,0x20000
+ 5fc:	50058593          	addi	a1,a1,1280 # 20000500 <DPU_LDMR>
+ 600:	00458593          	addi	a1,a1,4
+ 604:	00500613          	li	a2,5
+ 608:	e31ff0ef          	jal	ra,438 <set_param>
+ 60c:	00c12083          	lw	ra,12(sp)
+ 610:	01010113          	addi	sp,sp,16
+ 614:	00008067          	ret
+
+00000618 <ldmr_start>:
+ 618:	200002b7          	lui	t0,0x20000
+ 61c:	50028293          	addi	t0,t0,1280 # 20000500 <DPU_LDMR>
+ 620:	00300313          	li	t1,3
+ 624:	0062a023          	sw	t1,0(t0)
+ 628:	00008067          	ret
+
+0000062c <ldmr_check>:
+ 62c:	20000337          	lui	t1,0x20000
+ 630:	00432283          	lw	t0,4(t1) # 20000004 <DPU_REGMGR+0x4>
+ 634:	0102f293          	andi	t0,t0,16
+ 638:	0042d513          	srli	a0,t0,0x4
+ 63c:	00028a63          	beqz	t0,650 <ldmr_check_exit>
+ 640:	20000337          	lui	t1,0x20000
+ 644:	50030313          	addi	t1,t1,1280 # 20000500 <DPU_LDMR>
+ 648:	00200293          	li	t0,2
+ 64c:	00532023          	sw	t0,0(t1)
+
+00000650 <ldmr_check_exit>:
+ 650:	00008067          	ret
+
+00000654 <svmr_set>:
+ 654:	ff010113          	addi	sp,sp,-16
+ 658:	00112623          	sw	ra,12(sp)
+ 65c:	200005b7          	lui	a1,0x20000
+ 660:	60058593          	addi	a1,a1,1536 # 20000600 <DPU_SVMR>
+ 664:	00458593          	addi	a1,a1,4
+ 668:	00400613          	li	a2,4
+ 66c:	dcdff0ef          	jal	ra,438 <set_param>
+ 670:	00c12083          	lw	ra,12(sp)
+ 674:	01010113          	addi	sp,sp,16
+ 678:	00008067          	ret
+
+0000067c <svmr_start>:
+ 67c:	200002b7          	lui	t0,0x20000
+ 680:	60028293          	addi	t0,t0,1536 # 20000600 <DPU_SVMR>
+ 684:	00300313          	li	t1,3
+ 688:	0062a023          	sw	t1,0(t0)
+ 68c:	00008067          	ret
+
+00000690 <svmr_check>:
+ 690:	20000337          	lui	t1,0x20000
+ 694:	00432283          	lw	t0,4(t1) # 20000004 <DPU_REGMGR+0x4>
+ 698:	0202f293          	andi	t0,t0,32
+ 69c:	0052d513          	srli	a0,t0,0x5
+ 6a0:	00028a63          	beqz	t0,6b4 <svmr_check_exit>
+ 6a4:	20000337          	lui	t1,0x20000
+ 6a8:	60030313          	addi	t1,t1,1536 # 20000600 <DPU_SVMR>
+ 6ac:	00200293          	li	t0,2
+ 6b0:	00532023          	sw	t0,0(t1)
+
+000006b4 <svmr_check_exit>:
+ 6b4:	00008067          	ret
+
+000006b8 <dlctrl_set>:
+ 6b8:	ff010113          	addi	sp,sp,-16
+ 6bc:	00112623          	sw	ra,12(sp)
+ 6c0:	200002b7          	lui	t0,0x20000
+ 6c4:	70028293          	addi	t0,t0,1792 # 20000700 <DPU_DLCTRL>
+ 6c8:	00052303          	lw	t1,0(a0)
+ 6cc:	0062a223          	sw	t1,4(t0)
+ 6d0:	00000393          	li	t2,0
+ 6d4:	0072a023          	sw	t2,0(t0)
+ 6d8:	00452303          	lw	t1,4(a0)
+ 6dc:	0062a223          	sw	t1,4(t0)
+ 6e0:	00100393          	li	t2,1
+ 6e4:	0072a023          	sw	t2,0(t0)
+ 6e8:	00852303          	lw	t1,8(a0)
+ 6ec:	0062a223          	sw	t1,4(t0)
+ 6f0:	00200393          	li	t2,2
+ 6f4:	0072a023          	sw	t2,0(t0)
+ 6f8:	00100313          	li	t1,1
+ 6fc:	0062a423          	sw	t1,8(t0)
+ 700:	00c12083          	lw	ra,12(sp)
+ 704:	01010113          	addi	sp,sp,16
+ 708:	00008067          	ret
+
+0000070c <uplctrl_set>:
+ 70c:	ff010113          	addi	sp,sp,-16
+ 710:	00112623          	sw	ra,12(sp)
+ 714:	200015b7          	lui	a1,0x20001
+ 718:	80058593          	addi	a1,a1,-2048 # 20000800 <DPU_UPLCTRL>
+ 71c:	00458593          	addi	a1,a1,4
+ 720:	00100613          	li	a2,1
+ 724:	d15ff0ef          	jal	ra,438 <set_param>
+ 728:	00c12083          	lw	ra,12(sp)
+ 72c:	01010113          	addi	sp,sp,16
+ 730:	00008067          	ret
+
+00000734 <uplctrl_start>:
+ 734:	200012b7          	lui	t0,0x20001
+ 738:	80028293          	addi	t0,t0,-2048 # 20000800 <DPU_UPLCTRL>
+ 73c:	00300313          	li	t1,3
+ 740:	0062a023          	sw	t1,0(t0)
+ 744:	00008067          	ret
+
+00000748 <fshflg_ps>:
+ 748:	200002b7          	lui	t0,0x20000
+ 74c:	00100313          	li	t1,1
+ 750:	0062a023          	sw	t1,0(t0) # 20000000 <DPU_REGMGR>
+ 754:	00008067          	ret
